@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-fe
+  labels:
+    app: udagram-fe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: udagram-fe
+  template:
+    metadata:
+      labels:
+        app: udagram-fe
+    spec:
+      containers:
+        - name: udagram-fe
+          image: varunraj7/udagram-frontend:v1
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"

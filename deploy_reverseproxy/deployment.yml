@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-rp
+  labels:
+    app: udagram-rp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-rp
+  template:
+    metadata:
+      labels:
+        app: udagram-rp
+    spec:
+      containers:
+        - image: varunraj7/udagram-reverse-proxy:v1
+          name: udagram-rp
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always

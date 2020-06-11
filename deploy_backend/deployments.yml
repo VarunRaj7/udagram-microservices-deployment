@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-feed
+  labels:
+    app: udagram-feed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-feed
+  template:
+    metadata:
+      labels:
+        app: udagram-feed
+    spec:
+      containers:
+        - name: udagram-feed
+          image: varunraj7/udagram-feed-api:v1
+          envFrom:
+            - secretRef:
+                name: be-secrets
+          command: ["npm", "run", "prod"]
+          imagePullPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-users
+  labels:
+    app: udagram-users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-users
+  template:
+    metadata:
+      labels:
+        app: udagram-users
+    spec:
+      containers:
+        - name: udagram-users
+          image: varunraj7/udagram-users-api:v1
+          envFrom:
+            - secretRef:
+                name: be-secrets
+          command: ["npm", "run", "prod"]
+          imagePullPolicy: Always
