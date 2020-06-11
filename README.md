@@ -9,13 +9,17 @@ The Udagram has the following components which are then turned as microservices.
 
 These components are shown in the below picture with their dependencies:
 
-<img align="center" src="https://github.com/VarunRaj7/udagram-microservices-deployment/blob/master/img/dependency-graph.png" width="400" height="400" >
+<div align="center">
+<img  src="https://github.com/VarunRaj7/udagram-microservices-deployment/blob/master/img/dependency-graph.png" width="400" height="400" >
+</div>
 
 <!-- ![dependency-graph]( = 50x50) -->
 
 The final microservices design:
 
-<img align="center" src="https://github.com/VarunRaj7/udagram-microservices-deployment/blob/master/img/microservice-design.png" width="800" height="500">
+<div align="center">
+<img src="https://github.com/VarunRaj7/udagram-microservices-deployment/blob/master/img/microservice-design.png" width="800" height="500">
+</div>
 
 <!-- ![microservices-design]( = 150x100){ width=100px height=100px} -->
 
